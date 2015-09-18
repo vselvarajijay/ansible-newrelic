@@ -133,3 +133,17 @@ collector_host={{ newrelic_collector_host }}
 # Default: 30
 #
 timeout={{ newrelic_timeout }}
+
+
+#
+# Option : hostname
+# Value  : Sets the hostname of the server as it appears in New Relic. The
+#          server agent does not support spaces, and special characters besides
+#          hyphens -, underscores _, and periods . are discouraged. The name is
+#          restricted to 64 characters.
+# Default: OS-level hostname
+#
+#
+{% if {{ hostname }} %}
+hostname={{ hostname }}
+{% endif %}
